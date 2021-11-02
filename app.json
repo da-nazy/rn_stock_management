@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "inventory_control_system",
+    "slug": "inventory_control_system",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "inventory_control_system"
+}
