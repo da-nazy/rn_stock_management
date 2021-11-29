@@ -21,7 +21,7 @@ export default function Dashboard({navigation}) {
       icon: 'cubes',
       color: "#F6C36A",
       colorBlur: "rgba(246, 195, 106,0.2)",
-      link:()=>console.log("Products"),
+      link:()=>navigation.navigate("Products"),
     },
     {
       name: "Low Stocks",
@@ -56,7 +56,7 @@ export default function Dashboard({navigation}) {
       date: "03/08/2019",
     },
   ];
-  const test = () => {};
+ 
   return (
     <View style={style.container}>
       <StatusBar backgroundColor={color.secondary} />

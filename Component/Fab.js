@@ -2,26 +2,9 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import IconComp from "../Component/Util/IconComp";
 import * as Animatable from 'react-native-animatable';
-export default function Fab() {
+export default function Fab({actionBtn,actIcon1,actIcon2}) {
   const [open, setOpen] = useState(false);
-  const actionBtn = [
-    {
-      name: "in",
-      icon: "expand-alt",
-      color: "#F6C36A",
-    },
-    {
-      name: "out",
-      icon: "level-up-alt",
-      color: "#5EA37C",
-    },
-
-    {
-      name: "hand",
-      icon: "door-open",
-      color: "#BE2F2A",
-    },
-  ];
+  
   const [animation,setAnimation]=useState({
     visible:false,
     type:"",
@@ -39,7 +22,7 @@ export default function Fab() {
   }
   const props=animation.visible?{animation:animation.type}:{}
   return (
-    <View style={style.container} >
+    <View style={{...style.container}} >
       <Animatable.View style={{height:'70%'}} {...props}>
       {open&&<View
         style={{
@@ -55,6 +38,7 @@ export default function Fab() {
             <TouchableOpacity
               key={i}
               style={{ ...style.actionBtn, backgroundColor: `${e.color}` }}
+              onPress={()=>e.func(e.name)}
             >
               <IconComp name={e.icon} size={18} color={"#fff"} />
             </TouchableOpacity>
@@ -66,7 +50,7 @@ export default function Fab() {
         onPress={() => op()}
         style={style.fabBtn}
       >
-        <IconComp name={open ? "minus" : "plus"} size={18} color={"#fff"} />
+        <IconComp name={open ? actIcon2: actIcon1} size={18} color={"#fff"} />
       </TouchableOpacity>
     </View>
   );

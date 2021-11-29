@@ -4,54 +4,57 @@ import { PieChart } from "react-native-chart-kit";
 import IconComp from "./Util/IconComp";
 import IOComp from "./Util/IOComp";
 import Fab from "./Fab";
+import ChartDisplayComp from "./Util/ChartDisplayComp";
 export default function Transactions() {
   const data = [
     { 
         name:'In',
       population:700,
-      color:"rgba(94, 163, 124)",
+      color:"rgb(94, 163, 124)",
+      link:()=>console.log(this.name)
     },
     { 
         name:'Out',
       population:250,
-      color: "rgba(190, 47, 42)",
+      color: "rgb(190, 47, 42)",
+      link:()=>console.log(this.name)
     },
     
     {  
-      name:"At hand",
+      name:"In hand",
       population: 450,
-      color: "rgba(246, 195, 106)",
+      color: "rgb(246, 195, 106)",
       hasLegend: false,
+      link:()=>console.log(this.name)
     },
-   
-    
-  
+
   ];
-   
-  const ioHand=[
-    {
-        amount:'450',
-        color: "rgba(246, 195, 106,1)",
-        name:'In Hand',
-        link:()=>console.log(this.name)
-    },
-       
-       {
-        amount:'250',
-        color: "rgba(190, 47, 42,1)",
-        name:'Out',
-        link:()=>console.log(this.name)
-    },
-    {
-        amount:'700',
-        color:"rgba(94, 163, 124,1)",
-        name:'In',
-        link:()=>console.log(this.name)
-    }
 
+  const actionBtn = [
+    {
+      name: "in",
+      icon: "expand-alt",
+      color: "#F6C36A",
+      func:(e)=>console.log(e)
+    },
+    {
+      name: "out",
+      icon: "level-up-alt",
+      color: "#5EA37C",
+      func:(e)=>console.log(e)
+    },
+
+    {
+      name: "hand",
+      icon: "door-open",
+      color: "#BE2F2A",
+     func:(e)=>console.log(e)
+    },
+  ]
+   
   
 
-  ]
+  
 
   const chartConfig = {
     backgroundGradientFrom: "#1E2923",
@@ -70,47 +73,29 @@ export default function Transactions() {
 
   return (
     <View style={{ ...style.tranCont }}>
-      <View style={{ ...style.tranChart }}>
-        <PieChart
-          data={data}
-          width={Dimensions.get("screen").width / 2.3}
-          height={120}
-          chartConfig={chartConfig}
-          accessor={"population"}
-          backgroundColor={"transparent"}
-          paddingLeft={"15"}
-          center={[25, 10]}
-          absolute
-          hasLegend={false}
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignSelf: "center",
-          }}
-        />
-      </View>
-      <View style={{...style.iohand}}>
-        {ioHand.map((e,i)=>{
-            return(
-        <TouchableOpacity key={i} style={{width:'30%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
-           <IconComp name="stop" size={20} color={`${e.color}`} />
-           <Text>
-              {e.amount} {e.name}
-           </Text>
-       </TouchableOpacity>
-            )
-        })}
-       
-       
-      </View>
-      <View style={{height:'65%',width:Dimensions.get('screen').width,padding:10}}>
-       <ScrollView style={{width:'100%',height:'100%',display:'flex',flexDirection:'column'}}>
+      <ChartDisplayComp data={data}/>
+      <View style={{height:'60%',width:Dimensions.get('screen').width,padding:10}}>
+       <ScrollView style={{width:'100%',height:10,display:'flex',flexDirection:'column'}}>
          <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-       
+         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
+        
        </ScrollView>
-       <Fab/>
+     
+
       </View>
+      <View style={{marginTop:70}}>
+     <Fab actionBtn={actionBtn} actIcon1={"bars"} actIcon2={"times"}/>
+     </View>
     </View>
   );
 }

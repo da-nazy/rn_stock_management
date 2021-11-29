@@ -20,6 +20,7 @@ export default function IOComp({ color, type, name, date, amount }) {
           justifyContent: "center",
           alignSelf: "center",
           backgroundColor: color,
+          
         }}
       >
         <Text
