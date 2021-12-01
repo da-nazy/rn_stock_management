@@ -6,6 +6,7 @@ import IOComp from "./Util/IOComp";
 import Fab from "./Fab";
 import ChartDisplayComp from "./Util/ChartDisplayComp";
 export default function Transactions() {
+  
   const data = [
     { 
         name:'In',
@@ -56,37 +57,24 @@ export default function Transactions() {
 
   
 
-  const chartConfig = {
-    backgroundGradientFrom: "#1E2923",
-    backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#08130D",
-    backgroundGradientToOpacity: 0.5,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false, // optional
-    style: {
-      borderWidth: 1,
-      backgroundColor: "red",
-    },
-  };
+  
 
   return (
     <View style={{ ...style.tranCont }}>
       <ChartDisplayComp data={data}/>
       <View style={{height:'60%',width:Dimensions.get('screen').width,padding:10}}>
        <ScrollView style={{width:'100%',height:10,display:'flex',flexDirection:'column'}}>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
-         <IOComp color="#F6C36A" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
+         <IOComp color="#5EA37C" amount="300" type="IN" name="Washing Powder" date="03/08/2019"/>
          <IOComp color="#BE2F2A" amount="250" type="OUT" name="Washing Powder" date="03/08/2019"/>
         
        </ScrollView>

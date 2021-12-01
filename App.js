@@ -7,13 +7,14 @@ import  Dashboard from './Component/Dashboard';
 import Transactions from './Component/Transactions';
 import Products from './Component/Products';
 import IconComp from './Component/Util/IconComp';
+import Product from './Component/Product';
 export default function App() {
    
-   const ProductHead=(props)=>{
+   const ProductHead=(props,name)=>{
      return(
       <TouchableOpacity  onPress={()=>props.navigation.goBack()} style={{height:35,display:'flex',flexDirection:'row',alignItems:'center',paddingLeft:5}}>
         <IconComp name="chevron-left" size={20} style={{color:'#5EA37C'}} />
-        <Text style={{color:'#5EA37C',fontSize:17,fontWeight:'700',paddingLeft:10}}> Products</Text>
+        <Text style={{color:'#5EA37C',fontSize:17,fontWeight:'700',paddingLeft:10}}> {name}</Text>
         </TouchableOpacity>
      )
    } 
@@ -37,8 +38,15 @@ export default function App() {
         <Stack.Screen
         name="Products"
         component={Products}
-        options={{ header: (props) =>ProductHead(props) }}
+        options={{ header: (props) =>ProductHead(props,"Products") }}
         />
+
+         <Stack.Screen
+        name="Product"
+        component={Product}
+        options={{ header: (props) =>ProductHead(props,"Product")}}
+        />
+
 
      </Stack.Navigator>
    </NavigationContainer>

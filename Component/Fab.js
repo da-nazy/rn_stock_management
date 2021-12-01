@@ -58,11 +58,11 @@ export default function Fab({actionBtn,actIcon1,actIcon2}) {
 
 const style = StyleSheet.create({
   container: {
-    height: 250,
+    
     width: 60,
     position: "absolute",
     right: 0,
-    bottom: 0,
+    bottom: 20,
     marginRight: 10,
     zIndex: 2,
     display: "flex",
@@ -74,6 +74,7 @@ const style = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
+    marginBottom:5,
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "#000",
