@@ -1,13 +1,13 @@
 import React from 'react';
 import{View,Text} from 'react-native';
 import { TextInput } from 'react-native-paper';
-import {colors} from '../Util/Constants';
-export default function InputComp({setText,style,mode,placeholder,label,right,error,secureText,maxLength,keyboardType,autoFocus}){
+import { colors } from './Constant';
+export default function InputComp({ roundness,themePrimary,themeText,themeBackground,themePlaceholder,selectionColor,outlineColor,setText,style,mode,placeholder,label,right,error,secureText,maxLength,keyboardType,autoFocus}){
 
     return(
   <TextInput
-   selectionColor={colors.secondary}
-   outlineColor={colors.secondary}
+   selectionColor={selectionColor?selectionColor:colors.secondary}
+   outlineColor={outlineColor?outlineColor:colors.secondary}
    onChangeText={(e)=>setText(e)}
    placeholder={placeholder}
    label={label}
@@ -21,10 +21,12 @@ export default function InputComp({setText,style,mode,placeholder,label,right,er
     maxLength={maxLength}
     
    theme={{
-    roundness: 0,
+    roundness:roundness?roundness:0,
     colors: {
-          primary:`${colors.third}`,
-          text: 'white',background:`${colors.transparent}`,placeholder:`${colors.third}`
+          primary:`${themePrimary?themePrimary:colors.third}`,
+          text: `${themeText?themeText:'white'}`,
+          background:`${themeBackground?themeBackground:colors.transparent}`,
+          placeholder:`${themePlaceholder?themePlaceholder:colors.third}`
        }
  }}
   />

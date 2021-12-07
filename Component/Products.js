@@ -22,7 +22,7 @@ export default function Products({ navigation }) {
       name: "out",
       icon: "plus",
       color: "#5EA37C",
-      func: (e) => console.log(e),
+      func: (e) => navigation.navigate('Addproduct'),
     },
   ];
 

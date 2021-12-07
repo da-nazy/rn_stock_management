@@ -12,7 +12,7 @@ import {
   Touchable,
   ImageStore,
 } from "react-native";
-import { color, image } from "./constant";
+import { image,colors } from "./Util/Constant";
 import IconComp from "./Util/IconComp";
 export default function Dashboard({navigation}) {
   const nav = [
@@ -59,7 +59,7 @@ export default function Dashboard({navigation}) {
  
   return (
     <View style={style.container}>
-      <StatusBar backgroundColor={color.secondary} />
+      <StatusBar backgroundColor={colors.secondary} />
 
       <View style={style.imgCont}>
         <ImageBackground
@@ -181,7 +181,7 @@ const style = StyleSheet.create({
   imgCont: {
     display: "flex",
     height: "30%",
-    backgroundColor: `${color.secondary}`,
+    backgroundColor: `${colors.secondary}`,
     position: "relative",
     flexDirection: "row",
   },

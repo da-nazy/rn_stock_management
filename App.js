@@ -49,9 +49,9 @@ export default function App() {
         />
           
           <Stack.Screen
-          name="Add Prodct"
+          name="Addproduct"
           component={Addproduct}
-          options={{headerShadown:'false'}}
+          options={{headerShown:false}}
           />
 
      </Stack.Navigator>
