@@ -8,6 +8,7 @@ import Transactions from './Component/Transactions';
 import Products from './Component/Products';
 import IconComp from './Component/Util/IconComp';
 import Product from './Component/Product';
+import Addproduct from './Component/Addproduct';
 export default function App() {
    
    const ProductHead=(props,name)=>{
@@ -46,7 +47,12 @@ export default function App() {
         component={Product}
         options={{ header: (props) =>ProductHead(props,"Product")}}
         />
-
+          
+          <Stack.Screen
+          name="Add Prodct"
+          component={Addproduct}
+          options={{headerShadown:'false'}}
+          />
 
      </Stack.Navigator>
    </NavigationContainer>
